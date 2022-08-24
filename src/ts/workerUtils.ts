@@ -9,7 +9,7 @@ let _useWorkers = false // The following is just to check whether we can use wor
 if (!IS_BROWSER) { // Node.js
   try {
     await import('worker_threads')
-    _useWorkers = true
+    // _useWorkers = true
   } /* c8 ignore start */ catch (e) {
     console.log(`[bigint-crypto-utils] WARNING:
 This node version doesn't support worker_threads. You should enable them in order to greatly speedup the generation of big prime numbers.
