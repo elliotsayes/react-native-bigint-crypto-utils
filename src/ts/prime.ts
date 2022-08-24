@@ -26,11 +26,11 @@ if (!IS_BROWSER) {
  *
  * @returns A promise that resolves to a bigint probable prime of bitLength bits.
  */
-export function prime (bitLength: number, iterations: number = 16): Promise<bigint> { // eslint-disable-line
+export function prime (bitLength: number, iterations: number = 16, disableWorkers: boolean = false): Promise<bigint> { // eslint-disable-line
   if (bitLength < 1) throw new RangeError('bitLength MUST be > 0')
 
   /* c8 ignore start */
-  if (!_useWorkers) { // If there is no support for workers
+  if (disableWorkers || !_useWorkers) {
     let rnd = 0n
     do {
       rnd = fromBuffer(randBitsSync(bitLength, true))
