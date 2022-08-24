@@ -29,6 +29,7 @@
   "main": "./dist/cjs/index.node.cjs",
   "browser": "./dist/esm/index.browser.js",
   "module": "./dist/esm/index.node.js",
+  "react-native": "./dist/cjs/index.node.cjs",
   "exports": {
     ".": {
       "node": {
